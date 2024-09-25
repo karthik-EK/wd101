@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const entriesTableBody = document.getElementById('entriesTableBody');
     const dobError = document.getElementById('dobError');
 
-    // Load existing entries from local storage
     loadEntries();
 
     form.addEventListener('submit', function (event) {
@@ -15,25 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const dob = document.getElementById('dob').value;
         const termsAccepted = document.getElementById('terms').checked;
 
-        // Calculate age
         const age = calculateAge(dob);
 
-        // Validate date of birth
         if (!isValidDateOfBirth(age)) {
             dobError.textContent = `You are ${age} years old. You must be between 18 and 55 years old. Please change your date of birth.`;
             return;
         } else {
-            dobError.textContent = ''; // Clear the error message
+            dobError.textContent = '';
         }
 
-        // Save to local storage
         const entry = { name, email, password, dob, termsAccepted };
         saveEntry(entry);
-
-        // Clear form fields
         form.reset();
-
-        // Load entries to update the table
         loadEntries();
     });
 
@@ -42,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const birthDate = new Date(dob);
         let age = today.getFullYear() - birthDate.getFullYear();
         const monthDifference = today.getMonth() - birthDate.getMonth();
-        // Adjust age if birth date hasn't occurred yet this year
         if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
             age--;
         }
@@ -57,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const entries = JSON.parse(localStorage.getItem('entries')) || [];
         entries.push(entry);
         localStorage.setItem('entries', JSON.stringify(entries));
-        console.log('Entry saved:', entry); // Debugging line
+        console.log('Entry saved:', entry);
     }
 
     function loadEntries() {
         const entries = JSON.parse(localStorage.getItem('entries')) || [];
         entriesTableBody.innerHTML = '';
-        console.log('Loading entries:', entries); // Debugging line
+        console.log('Loading entries:', entries);
         entries.forEach(entry => {
             const row = document.createElement('tr');
             row.innerHTML = `
