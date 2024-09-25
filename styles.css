@@ -1,0 +1,59 @@
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Container for centering content */
+.container {
+    max-width: 800px; /* Wider container for more flexibility */
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the form inputs */
+.form-control {
+    background-color: #e9ecef; /* Light background for input fields */
+    border: 1px solid #ced4da; /* Light border */
+}
+
+/* Styling for error message */
+.form-text.text-danger {
+    font-weight: bold; /* Bold error message */
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #007bff; /* Bootstrap primary color */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Flex container for table */
+.table-responsive {
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
+}
+
+/* Styling the table */
+.table {
+    margin-top: 20px; /* Space above the table */
+}
+
+.table th, .table td {
+    text-align: center; /* Center align text in table */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px; /* Smaller padding for smaller screens */
+    }
+}
