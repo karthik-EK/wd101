@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const dob = document.getElementById('dob').value;
         const termsAccepted = document.getElementById('terms').checked;
 
+        // Log the boolean value of termsAccepted
+        console.log('Terms Accepted:', termsAccepted); // This will log true or false
+
         // Validate email
         if (!isValidEmail(email)) {
             alert("Please enter a valid email address.");
@@ -83,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${entry.email}</td>
                 <td>${entry.password}</td>
                 <td>${entry.dob}</td>
-                <td>${entry.termsAccepted ? 'true' : 'false'}</td>
+                <td>${entry.termsAccepted}</td> <!-- Changed to display true/false -->
             `;
             entriesTableBody.appendChild(row);
         });
