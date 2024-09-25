@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${entry.email}</td>
                 <td>${entry.password}</td>
                 <td>${entry.dob}</td>
-                <td>${entry.termsAccepted ? 'Yes' : 'No'}</td>
+                <td>${entry.termsAccepted ? 'True' : 'False'}</td>
             `;
             entriesTableBody.appendChild(row);
         });
